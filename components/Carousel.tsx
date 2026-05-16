@@ -2,21 +2,25 @@
 
 import { useLanguage } from '@/context/LanguageContext';
 import { useCarousel } from '@/hooks/useCarousel';
+import  Image  from 'next/image';
 
-const placeholders = [
-  { gradient: 'from-blue-dark to-blue-mid' },
-  { gradient: 'from-blue to-blue-light' },
-  { gradient: 'from-blue-mid to-blue-light' },
-  { gradient: 'from-red to-blue' },
-  { gradient: 'from-blue-dark to-blue' },
-  { gradient: 'from-blue to-blue-mid' },
+const images = [
+  '/carousel/1.jpg',
+  '/carousel/2.jpg',
+  '/carousel/3.jpg',
+  '/carousel/4.jpg',
+  '/carousel/5.jpg',
+  '/carousel/6.jpg',
 ];
 
 export default function Carousel() {
   const { t } = useLanguage();
-  const total = placeholders.length;
+  const total = images.length;
   const slidesPerView = 3;
-  const { current, goTo, next, prev, offset } = useCarousel(total, slidesPerView);
+  const { current, goTo, next, prev, offset } = useCarousel(
+    total,
+    slidesPerView,
+  );
 
   return (
     <section id="galeria" className="bg-offwhite py-24">
@@ -36,18 +40,16 @@ export default function Carousel() {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${offset}%)` }}
         >
-          {placeholders.map((p, i) => (
-            <div
-              key={i}
-              className="min-w-[33.333%] px-3 shrink-0"
-            >
-              <div
-                className={`w-full aspect-4/3 rounded-md bg-linear-to-br ${p.gradient} flex flex-col items-center justify-center gap-2`}
-              >
-                <span className="text-4xl">📸</span>
-                <span className="text-white/80 text-sm tracking-wider">
-                  Foto da Escola {i + 1}
-                </span>
+          {images.map((src, i) => (
+            <div key={i} className="min-w-[33.333%] px-3 shrink-0">
+              <div className="w-full aspect-4/3 rounded-md overflow-hidden bg-linear-to-br flex items-center justify-center">
+                <Image
+                  width={200}
+                  height={200}
+                  src={src}
+                  alt={`Foto da Escola ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           ))}
@@ -69,9 +71,7 @@ export default function Carousel() {
               key={i}
               onClick={() => goTo(i)}
               className={`w-2 h-2 rounded-full border-none cursor-pointer transition-all duration-200 ${
-                i === current
-                  ? 'bg-blue scale-125'
-                  : 'bg-blue/25'
+                i === current ? 'bg-blue scale-125' : 'bg-blue/25'
               }`}
             />
           ))}

@@ -1,7 +1,7 @@
 'use client';
 
-import { useLanguage } from '@/context/LanguageContext';
 import RevealSection from '@/components/RevealSection';
+import { useLanguage } from '@/context/LanguageContext';
 
 const gradients = [
   'from-blue-dark to-blue-light',
@@ -33,14 +33,20 @@ export default function Levels() {
         {t.levels.items.map((item, i) => (
           <RevealSection key={item.title} delay={delays[i]}>
             <div className="bg-white/12 border border-white/25 rounded-lg overflow-hidden hover:-translate-y-2 hover:bg-white/18 transition-all duration-300 h-full">
-              <div className={`w-full aspect-3/4 bg-linear-to-br ${gradients[i]} flex items-center justify-center`}>
-                <div className="font-display text-lg font-bold text-white text-center px-2 leading-tight drop-shadow-md">
-                  {item.badge}
-                </div>
+               <div className="w-full aspect-3/4 overflow-hidden">
+                <img
+                  src={(item as any).image ?? `/book/${i + 1}.jpg`}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-4">
-                <div className="font-display text-base font-bold text-white mb-2">{item.title}</div>
-                <p className="text-[0.8rem] text-white/75 leading-relaxed">{item.text}</p>
+                <div className="font-display text-base font-bold text-white mb-2">
+                  {item.title}
+                </div>
+                <p className="text-[0.8rem] text-white/75 leading-relaxed">
+                  {item.text}
+                </p>
               </div>
             </div>
           </RevealSection>
