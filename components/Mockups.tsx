@@ -1,6 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/context/LanguageContext';
+import RevealSection from '@/components/RevealSection';
 
 function PhoneRanking() {
   return (
@@ -103,52 +104,51 @@ export default function Mockups() {
   return (
     <section className="bg-white px-6 md:px-12 py-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-
-        {/* Phones */}
-        <div className="relative h-80 md:h-105">
-          <PhoneRanking />
-          <PhoneDashboard />
-
-          {/* Floating stats */}
-          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:-right-4 md:top-0 md:bottom-auto flex flex-row md:flex-col gap-2 z-40">
-            {[
-              { label: 'Nível médio', val: 'A2' },
-              { label: 'Exercícios', val: '5.000' },
-              { label: 'Conquistas', val: '120' },
-            ].map((s) => (
-              <div key={s.label} className="bg-white border border-blue/15 rounded-lg px-3 py-2 shadow-md min-w-25">
-                <div className="text-[0.6rem] text-text-mid">{s.label}</div>
-                <div className="font-display text-xl font-bold text-blue leading-none">{s.val}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Content */}
-        <div>
-          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-blue-light mb-3">
-            {t.mockups.eyebrow}
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark mb-4">
-            {t.mockups.title}
-          </h2>
-          <p className="text-sm text-text-mid mb-8 leading-relaxed">
-            {t.mockups.sub}
-          </p>
-          <div className="flex flex-col gap-5">
-            {t.mockups.features.map((f) => (
-              <div key={f.title} className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-lg bg-blue/8 flex items-center justify-center text-lg shrink-0">
-                  {f.icon}
+        <RevealSection delay="d1">
+          <div className="relative h-80 md:h-105">
+            <PhoneRanking />
+            <PhoneDashboard />
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:-right-4 md:top-0 md:bottom-auto flex flex-row md:flex-col gap-2 z-40">
+              {[
+                { label: 'Nível médio', val: 'A2' },
+                { label: 'Exercícios', val: '5.000' },
+                { label: 'Conquistas', val: '120' },
+              ].map((s) => (
+                <div key={s.label} className="bg-white border border-blue/15 rounded-lg px-3 py-2 shadow-md min-w-25">
+                  <div className="text-[0.6rem] text-text-mid">{s.label}</div>
+                  <div className="font-display text-xl font-bold text-blue leading-none">{s.val}</div>
                 </div>
-                <div>
-                  <div className="font-semibold text-sm text-text-dark mb-1">{f.title}</div>
-                  <p className="text-sm text-text-mid leading-relaxed">{f.text}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </RevealSection>
+
+        <RevealSection delay="d2">
+          <div>
+            <p className="text-[0.7rem] tracking-[0.2em] uppercase text-blue-light mb-3">
+              {t.mockups.eyebrow}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-text-dark mb-4">
+              {t.mockups.title}
+            </h2>
+            <p className="text-sm text-text-mid mb-8 leading-relaxed">
+              {t.mockups.sub}
+            </p>
+            <div className="flex flex-col gap-5">
+              {t.mockups.features.map((f) => (
+                <div key={f.title} className="flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-lg bg-blue/8 flex items-center justify-center text-lg shrink-0">
+                    {f.icon}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-sm text-text-dark mb-1">{f.title}</div>
+                    <p className="text-sm text-text-mid leading-relaxed">{f.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </RevealSection>
       </div>
     </section>
   );
