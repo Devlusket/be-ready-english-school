@@ -11,9 +11,9 @@
   --color-text-dark:  #1A1A2E;
   --color-text-mid:   #4A4A6A;
 
-  --font-display: var(--font-playfair), serif;
-  --font-script:  var(--font-dancing), cursive;
-  --font-body:    var(--font-dm-sans), sans-serif;
+  --font-family-display: var(--font-playfair), serif;
+  --font-family-script:  var(--font-dancing), cursive;
+  --font-family-body:    var(--font-dm-sans), sans-serif;
 }
 
 html { scroll-behavior: smooth; }

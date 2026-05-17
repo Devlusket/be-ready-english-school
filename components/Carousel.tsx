@@ -2,7 +2,8 @@
 
 import { useLanguage } from '@/context/LanguageContext';
 import { useCarousel } from '@/hooks/useCarousel';
-import  Image  from 'next/image';
+import Image from 'next/image';
+import { useEffect, useState, useRef } from 'react';
 
 const images = [
   '/carousel/1.jpg',
@@ -15,12 +16,37 @@ const images = [
 
 export default function Carousel() {
   const { t } = useLanguage();
+  const [slidesPerView, setSlidesPerView] = useState(3);
   const total = images.length;
-  const slidesPerView = 3;
-  const { current, goTo, next, prev, offset } = useCarousel(
-    total,
-    slidesPerView,
-  );
+  const { current, goTo, next, prev, offset } = useCarousel(total, slidesPerView);
+
+  // Touch state
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  // Responsivo
+  useEffect(() => {
+    const update = () => {
+      setSlidesPerView(window.innerWidth < 768 ? 1 : 3);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev();
+    }
+  };
+
+  const slideWidth = slidesPerView === 1 ? 100 : 33.333;
 
   return (
     <section id="galeria" className="bg-offwhite py-24">
@@ -35,20 +61,25 @@ export default function Carousel() {
       </div>
 
       {/* Track */}
-      <div className="overflow-hidden">
+      <div
+        className="overflow-hidden"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${offset}%)` }}
         >
           {images.map((src, i) => (
-            <div key={i} className="min-w-[33.333%] px-3 shrink-0">
-              <div className="w-full aspect-4/3 rounded-md overflow-hidden bg-linear-to-br flex items-center justify-center">
+            <div key={i} style={{ minWidth: `${slideWidth}%` }} className="px-3 shrink-0">
+              <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden">
                 <Image
-                  width={200}
-                  height={200}
                   src={src}
                   alt={`Foto da Escola ${i + 1}`}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 92vw, 33vw"
+                  className="object-cover"
+                  quality={90}
                 />
               </div>
             </div>
