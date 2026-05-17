@@ -1,14 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import RevealSection from '@/components/RevealSection';
 import { useLanguage } from '@/context/LanguageContext';
-
-const gradients = [
-  'from-blue-dark to-blue-light',
-  'from-blue to-blue-mid',
-  'from-blue-mid to-blue-light',
-  'from-blue-dark to-blue-mid',
-];
 
 const delays = ['d1', 'd2', 'd3', 'd4'] as const;
 
@@ -32,15 +26,18 @@ export default function Levels() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {t.levels.items.map((item, i) => (
           <RevealSection key={item.title} delay={delays[i]}>
-            <div className="bg-white/12 border border-white/25 rounded-lg overflow-hidden hover:-translate-y-2 hover:bg-white/18 transition-all duration-300 h-full">
-               <div className="w-full aspect-3/4 overflow-hidden">
-                <img
-                  src={(item as any).image ?? `/book/${i + 1}.jpg`}
+            <div className="bg-white/12 border border-white/25 rounded-lg overflow-hidden hover:-translate-y-2 hover:bg-white/18 transition-all duration-300 h-full flex flex-col">
+              <div className="relative w-full aspect-[3/4] bg-blue-dark flex items-center justify-center">
+                <Image
+                  src={item.image ?? `/book/${i + 1}.jpg`}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 45vw, 22vw"
+                  className="object-contain p-2"
+                  quality={90}
                 />
               </div>
-              <div className="p-4">
+              <div className="p-4 flex flex-col flex-1">
                 <div className="font-display text-base font-bold text-white mb-2">
                   {item.title}
                 </div>
