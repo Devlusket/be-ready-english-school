@@ -7,7 +7,7 @@ interface WaveDividerProps {
 export default function WaveDivider({ fromColor, toColor, variant = 'curve' }: WaveDividerProps) {
   if (variant === 'redblue') {
     return (
-      <div style={{ background: fromColor, lineHeight: 0 }}>
+      <div style={{ background: fromColor, lineHeight: 0, marginBottom: '-1px' }}>
         <svg
           viewBox="0 0 1440 70"
           preserveAspectRatio="none"
@@ -28,7 +28,7 @@ export default function WaveDivider({ fromColor, toColor, variant = 'curve' }: W
   }
 
   return (
-    <div style={{ background: fromColor, lineHeight: 0 }}>
+    <div style={{ background: fromColor, lineHeight: 0, marginBottom: '-1px' }}>
       <svg
         viewBox="0 0 1440 50"
         preserveAspectRatio="none"
