@@ -42,7 +42,7 @@ export default function Navbar() {
           width={150}
           height={55}
           className="object-contain"
-          style={{ mixBlendMode: 'multiply' }}
+          style={{ mixBlendMode: 'multiply', height: 'auto', width: 'auto' }}
           priority
         />
       </a>
