@@ -42,6 +42,7 @@ export default function Carousel() {
     touchEndX.current = e.changedTouches[0].clientX;
     const diff = touchStartX.current - touchEndX.current;
     if (Math.abs(diff) > 50) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       diff > 0 ? next() : prev();
     }
   };
