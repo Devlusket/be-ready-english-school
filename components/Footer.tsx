@@ -106,9 +106,16 @@ export default function Footer() {
             {t.footer.contact}
           </p>
           <div className="text-sm leading-loose">
+            <p>Rua Ouro Preto, 146 - Sala 1</p>
             <p>Medina, MG</p>
-            <p>contato@bereadyenglish.com.br</p>
-            <p>+55 (33) 9999-9999</p>
+            <a
+              href="https://wa.me/553384144942"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-white"
+            >
+              +55 (33) 8414-4942
+            </a>
           </div>
         </div>
       </div>

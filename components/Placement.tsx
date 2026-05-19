@@ -50,7 +50,9 @@ export default function Placement() {
 
         <RevealSection delay="d1">
           <a
-            href="#"
+            href="https://student.flexge.com/v2/placement/bereadyenglishschool"
+            target='_blank'
+            rel="noopener noreferrer"
             className="inline-block bg-white text-blue font-semibold text-sm tracking-wider uppercase px-10 py-4 rounded-sm hover:bg-offwhite transition-colors no-underline"
           >
             {t.placement.cta}
