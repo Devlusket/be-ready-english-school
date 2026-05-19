@@ -2,7 +2,6 @@
 
 import { useLanguage } from '@/context/LanguageContext';
 import clsx from 'clsx';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function Navbar() {
@@ -35,17 +34,21 @@ export default function Navbar() {
       )}
     >
       {/* Logo */}
-      <a href="#" className="flex items-center no-underline">
-        <Image
-          src="/logo.png"
-          alt="Be Ready English School"
-          width={150}
-          height={55}
-          className="object-contain"
-          style={{ mixBlendMode: 'multiply', height: 'auto', width: 'auto' }}
-          priority
-        />
-      </a>
+<a href="#" className="flex items-center gap-2 no-underline">
+  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1A3A8F] text-white text-sm">
+    🌐
+  </div>
+
+  <div className="leading-none">
+    <div className="font-serif text-base font-bold text-[#1A3A8F]">
+      Be Ready
+    </div>
+
+    <div className=" font-serif text-[10px] uppercase tracking-[0.08em] text-[#4A4A6A]">
+      English School
+    </div>
+  </div>
+</a>
 
       {/* Links desktop */}
       <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">
