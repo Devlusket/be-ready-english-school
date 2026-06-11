@@ -17,7 +17,7 @@ export const pt = {
     ctaSecondary: 'Ver Metodologia',
   },
   stats: {
-    lessons: 'Aulas Online e Presenciais',
+    lessons: 'Modalidades de Ensino',
     years: 'Anos de Excelência',
     personalized: 'Ensino Personalizado',
     students: 'Alunos Formados',

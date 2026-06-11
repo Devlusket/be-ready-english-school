@@ -91,7 +91,7 @@ export default function Hero() {
         className="relative z-10 flex flex-col gap-4 md:pl-8"
         style={{ animation: 'fadeUp 0.8s 0.4s ease both' }}
       >
-        <StatCard target={100} suffix="%" label={t.stats.lessons} />
+        <StatCard target={2} suffix="" label={t.stats.lessons} />
         <StatCard target={5}  suffix="+" label={t.stats.years} />
         <StatCard target={100} suffix="%" label={t.stats.personalized} />
       </div>

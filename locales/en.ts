@@ -19,7 +19,7 @@ export const en = {
   },
 
   stats: {
-    lessons: "Online and In-person Lessons",
+    lessons: "Teaching Formats",
     years: "Years of Excellence",
     personalized: "Personalized Teaching",
     students: "Graduated Students",
