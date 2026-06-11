@@ -17,7 +17,7 @@ export const pt = {
     ctaSecondary: 'Ver Metodologia',
   },
   stats: {
-    fluency: 'Taxa de Fluência',
+    lessons: 'Aulas Online e Presenciais',
     years: 'Anos de Excelência',
     personalized: 'Ensino Personalizado',
     students: 'Alunos Formados',
@@ -146,6 +146,29 @@ export const pt = {
       },
     ],
   },
+
+ teachers: {
+  eyebrow: 'Nossa Equipe',
+  title: 'Conheça nossos professores',
+  sub: 'Profissionais apaixonados pelo ensino e comprometidos em oferecer a melhor experiência de aprendizagem para nossos alunos.',
+
+  items: [
+    {
+      name: 'Nadine Prates',
+      role: 'CEO e Professora',
+      image: '/teachers/diretora.png',
+      description:
+        'Professora de inglês com formação em Letras e mais de 5 anos de experiência. Certificações Cambridge, TKT e Integrated Learning and Assessment. Experiência internacional pela Stafford House.',
+    },
+    {
+      name: 'Ana',
+      role: 'Professora',
+      image: '/teachers/professora.jpg',
+      description:
+        'Professora de inglês graduada em Relações Internacionais, nascida em Luanda, Angola. Possui experiência internacional na Autonomous University, em Baja California.',
+    },
+  ],
+},
   carousel: {
     eyebrow: 'Nossa Escola',
     title: 'Conheça o ambiente Be Ready',

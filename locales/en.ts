@@ -19,7 +19,7 @@ export const en = {
   },
 
   stats: {
-    fluency: "Fluency Rate",
+    lessons: "Online and In-person Lessons",
     years: "Years of Excellence",
     personalized: "Personalized Teaching",
     students: "Graduated Students",
@@ -194,6 +194,29 @@ export const en = {
       },
     ],
   },
+
+ teachers: {
+  eyebrow: 'Our Team',
+  title: 'Meet Our Teachers',
+  sub: 'Passionate educators committed to providing the best possible learning experience for every student.',
+
+  items: [
+    {
+      name: 'Nadine Prates',
+      role: 'CEO & Teacher',
+      image: '/teachers/diretora.png',
+      description:
+        'English teacher with a degree in Languages and over 5 years of experience. Holds Cambridge, TKT and Integrated Learning and Assessment certifications. International experience through Stafford House.',
+    },
+    {
+      name: 'Ana',
+      role: 'Teacher',
+      image: '/teachers/professora.jpg',
+      description:
+        'English teacher with a degree in International Relations, born in Luanda, Angola. Has international academic experience at Autonomous University in Baja California.',
+    },
+  ],
+},
 
   carousel: {
     eyebrow: "Our School",

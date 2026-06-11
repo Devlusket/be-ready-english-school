@@ -9,6 +9,7 @@ import Carousel from '@/components/Carousel';
 import Placement from '@/components/Placement';
 import Footer from '@/components/Footer';
 import WaveDivider from '@/components/WaveDivider';
+import  Teachers  from '@/components/Teachers';
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
       <Methodology />
       <Levels />
       <WaveDivider fromColor="#1D4ED8" toColor="#F8F7F4" />
+      <Teachers />
+      <WaveDivider fromColor="#F8F7F4" toColor="#ffffff" />
       <Carousel />
       <Placement />
       <Footer />
