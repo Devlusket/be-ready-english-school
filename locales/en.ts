@@ -217,6 +217,11 @@ export const en = {
     },
   ],
 },
+feedbacks: {
+  eyebrow: 'Real Results',
+  title: 'What Our Students Say',
+  sub: 'Real messages from students and parents who closely followed their progress with the Be Ready methodology.',
+},
 
   carousel: {
     eyebrow: "Our School",

@@ -169,6 +169,11 @@ export const pt = {
     },
   ],
 },
+feedbacks: {
+  eyebrow: 'Resultados Reais',
+  title: 'O que nossos alunos dizem',
+  sub: 'Mensagens reais de alunos e responsáveis que acompanharam de perto sua evolução com a metodologia Be Ready.',
+},
   carousel: {
     eyebrow: 'Nossa Escola',
     title: 'Conheça o ambiente Be Ready',

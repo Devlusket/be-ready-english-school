@@ -10,6 +10,7 @@ import Placement from '@/components/Placement';
 import Footer from '@/components/Footer';
 import WaveDivider from '@/components/WaveDivider';
 import  Teachers  from '@/components/Teachers';
+import Feedbacks from '@/components/Feedbacks';
 
 export default function Home() {
   return (
@@ -28,6 +29,8 @@ export default function Home() {
       <Teachers />
       <WaveDivider fromColor="#F8F7F4" toColor="#ffffff" />
       <Carousel />
+      <WaveDivider fromColor="#F8F7F4" toColor="#1D4ED8" />
+      <Feedbacks />
       <Placement />
       <Footer />
     </main>
