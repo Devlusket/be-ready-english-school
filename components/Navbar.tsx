@@ -75,6 +75,8 @@ export default function Navbar() {
         <a
           href="#placement"
           className="hidden md:inline-block text-xs font-medium tracking-wider uppercase bg-blue text-white px-5 py-2.5 rounded-sm hover:bg-blue-dark transition-colors no-underline"
+          onClick={() => window.gtag?.('event', 'click_placement_test', { event_category: 'CTA', event_label: 'Navbar' })}
+
         >
           {t.nav.apply}
         </a>
@@ -120,8 +122,12 @@ export default function Navbar() {
           ))}
           <a
             href="#placement"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+    setMenuOpen(false);
+    window.gtag?.('event', 'click_placement_test', { event_category: 'CTA', event_label: 'Navbar Mobile' });
+  }}
             className="text-center text-xs font-medium tracking-wider uppercase bg-blue text-white px-5 py-3 rounded-sm no-underline"
+            
           >
             {t.nav.apply}
           </a>

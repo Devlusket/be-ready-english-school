@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Playfair_Display, Dancing_Script, DM_Sans } from "next/font/google"
 import { LanguageProvider } from "@/context/LanguageContext"
 import "./globals.css"
+import Script from "next/script"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -33,6 +34,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-41LSX8T7X9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-41LSX8T7X9');
+          `}
+        </Script>
       </body>
     </html>
   )

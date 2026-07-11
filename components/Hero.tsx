@@ -74,6 +74,7 @@ export default function Hero() {
           <a
             href="#placement"
             className="inline-block px-8 py-4 bg-blue text-white text-xs font-medium tracking-widest uppercase rounded-sm hover:bg-blue-dark transition-colors no-underline"
+            onClick={() => window.gtag?.('event', 'click_placement_test', { event_category: 'CTA', event_label: 'Hero' })}
           >
             {t.hero.cta}
           </a>

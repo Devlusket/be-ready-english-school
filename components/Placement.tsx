@@ -54,6 +54,12 @@ export default function Placement() {
             target='_blank'
             rel="noopener noreferrer"
             className="inline-block bg-white text-blue font-semibold text-sm tracking-wider uppercase px-10 py-4 rounded-sm hover:bg-offwhite transition-colors no-underline"
+            onClick={() => {
+    window.gtag?.('event', 'click_placement_test', {
+      event_category: 'CTA',
+      event_label: 'Placement Test Button',
+    });
+  }}
           >
             {t.placement.cta}
           </a>

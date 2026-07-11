@@ -110,12 +110,13 @@ export default function Footer() {
             <p>Medina, MG</p>
             <a
               href="https://wa.me/553384144942"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-white"
-            >
-              +55 (33) 8414-4942
-            </a>
+  target="_blank"
+  rel="noopener noreferrer"
+  className="transition-colors hover:text-white"
+  onClick={() => window.gtag?.('event', 'click_whatsapp', { event_category: 'Footer', event_label: 'Phone Link' })}
+>
+  +55 (33) 8414-4942
+</a>
           </div>
         </div>
       </div>
