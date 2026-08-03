@@ -185,6 +185,9 @@ feedbacks: {
     desc2:
       'Em uma sessão individual, avaliamos seu nível atual de inglês, seus pontos fortes e o que ainda precisa ser desenvolvido. A partir desse diagnóstico, criamos um plano de estudo personalizado.',
     cta: 'Quero fazer meu Placement Test',
+    whatsappCta: 'Fale Já Conosco no WhatsApp',
+    whatsappMessage:
+      'Olá! Vim pelo site da Be Ready English School e gostaria de mais informações.',
     steps: [
       {
         num: '01',

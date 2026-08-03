@@ -237,6 +237,8 @@ feedbacks: {
     desc2: "In an individual session, we evaluate your current English level, your strengths and the areas that still need development. Based on this diagnosis, we create a personalized study plan.",
 
     cta: "I Want to Take My Placement Test",
+    whatsappCta: "Contact Us on WhatsApp Now",
+    whatsappMessage: "Hello! I came from the Be Ready English School website and would like more information.",
 
     steps: [
       {
